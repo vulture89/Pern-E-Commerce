@@ -1,0 +1,54 @@
+npm init -y
+
+npm i express dotenv cors helmet morgan @neondatabase/serverless @arcjet/node
+
+
+type: module makes 
+import express from "express" possible 
+otherwise u have to use const express = require("express")
+
+npm install nodemon -D
+-D dev dependency
+
+neon.tech is a postgress online server
+
+
+arcjet - email validation, bot protection, rate limiting
+
+
+2 ways of importing dotenv
+1: 
+import "dotenv/config";
+
+2: 
+import dotend from "dotenv";
+dotenv.config();
+
+
+
+
+---------- FRONTEND
+npm create vite@latest .
+tailwind - v3
+daisy ui - v4
+
+react-hot-toast = notification library to show some amazing notifications
+react-router-dom = navigation/links pages
+axios = fetch data/send req
+zustand = global state
+lucide-react = icons
+
+
+/////////////////////////
+When deploying
+do build command 
+"scripts": {
+    "dev": "nodemon backend/server.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "node backend/server.js"
+  },
+
+  run build and get distro
+in server.js
+import path
+const __dirname = path.resolve(); // Get the current directory name
