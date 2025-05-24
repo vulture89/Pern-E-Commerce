@@ -2,10 +2,12 @@ import React from "react";
 import { Link, useResolvedPath } from "react-router-dom";
 import { ShoppingCartIcon } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
+import { useProductStore } from "../stores/productStore";
 
 function NavBar() {
   const resolvePath = useResolvedPath();
   const isHomePage = resolvePath.pathname === "/";
+  const { products } = useProductStore();
 
   return (
     <div className="bg-base-100/80 backdrop-blur-lg border-b border-base-content/10 sticky top-0 z-50">
@@ -31,7 +33,7 @@ function NavBar() {
                 <div className="p-2 rounded-full hover:bg-base-200 transition-colors">
                   <ShoppingCartIcon className="size-5" />
                   <span className="badge badge-sm badge-primary indicator-item">
-                    8
+                    {products.length}
                   </span>
                 </div>
               </div>
