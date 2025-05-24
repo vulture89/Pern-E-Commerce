@@ -7,12 +7,14 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   const { theme } = useThemeStore();
+
   return (
     <div
-      data-theme={theme}
+      data-theme={theme} // Use actual theme from store
       className="min-h-screen bg-base-200 transition-colors duration-300"
     >
       <NavBar />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductPage />} />
